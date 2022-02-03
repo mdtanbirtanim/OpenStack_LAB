@@ -1,16 +1,13 @@
-
 # How to install OpenStack on Ubunto with DevStack in AWS
+     This lab is for learning and testing purpose using Devstack
+        Used equipments
+            Ubuntu Server 20.04 LTS
+            2 vCPUs
+            8 GB RAM
+            SSD 25 GB
+            AWS EC2 (t2.large)
 
-    This lab is for learning and testing purpose using Devstack
-
-    Used equipments
-        Ubuntu Server 20.04 LTS
-        2 vCPUs
-        8 GB RAM
-        SSD 25 GB
-        AWS EC2 (t2.large)
-
-    List of commands that I performed in machine
+    ## List of commands that I performed in machine
         sudo apt-get update
         sudo useradd -s /bin/bash -d /opt/stack -m stack
         sudo echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
@@ -18,7 +15,8 @@
         git clone https://git.openstack.org/openstack-dev/devstack
         cd devstack
         sudo touch local.conf
-        sudo vi local.conf 
+        
+    ## sudo vi local.conf 
             Pasete following content in local.conf
 
             [[local|localrc]]
@@ -33,13 +31,13 @@
 
             Save and exit the text editor using wq! at save mode.
 
-        Note: The default username is admin and password is "PasswordforAdmin" that you entered in local.conf.
+    ## Note: The default username is admin and password is "PasswordforAdmin" that you entered in local.conf.
 
     Install OpenStack with Devstack
         ./stack.sh                              Note: (be sure that your current director is devstack)
 
 
-    This command will installed varies features and it will take time for about 10 to 15 minutes
+    ## This command will installed varies features and it will take time for about 10 to 15 minutes
             Horizon – OpenStack Dashboard
             Nova – Compute Service
             Glance – Image Service
